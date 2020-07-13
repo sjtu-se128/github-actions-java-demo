@@ -17,13 +17,3 @@ jobs:
       run: mvn test
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-    - name: Push to GitHub Packages
-      uses: docker/build-push-action@v1
-      with:
-        username: ${{ github.actor }}
-        password: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-        registry: docker.pkg.github.com
-        repository: sjtu-se128/github-actions-java-demo/demo
-        tag_with_ref: true
-
-
